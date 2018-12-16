@@ -1,4 +1,4 @@
-var find_primes = function (min, max) {
+exports.find_primes = function (min, max) {
     var start = Date.now();
     var count = 0;
     for ( ; min < max; min++) {
@@ -10,7 +10,7 @@ var find_primes = function (min, max) {
     return count;
 }
 
-var is_prime = function (n) {
+exports.is_prime = function (n) {
     if (n == 0 || n == 1) return 0;
     var j = -1;
     var upperLimit = Math.sqrt(n);
@@ -24,7 +24,3 @@ var is_prime = function (n) {
     return 1;
 }
 
-exports = {
-    find_primes,
-    is_prime
-}

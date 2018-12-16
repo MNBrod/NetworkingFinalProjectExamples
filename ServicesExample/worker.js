@@ -56,7 +56,7 @@ if (cluster.isMaster) {
   });
 
   app.post('/add', (req, res) =>{
-    console.log("This is the data recieved in the POST:\n" + req.body);
+    console.log("This is the data recieved in the POST:\n" + JSON.stringify(req.body));
     var a = parseInt(req.body.min);
     var b = parseInt(req.body.max);
     var c = a + b;

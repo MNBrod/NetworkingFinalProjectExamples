@@ -44,7 +44,7 @@ app.get('/users', (req, res) => {
   User.findAll()
     // when the DB responds, sends out the response
     .then(dbres => {
-      res.sendStatus(200);
+      res.status(200);
       res.send(dbres);
     })
 })
