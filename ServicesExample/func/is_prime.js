@@ -1,3 +1,10 @@
+// This is an example of how a nodeJS thread might be used to solve
+// distributable problems. This function waits for a message from some other
+// process, and responds to that message by checking if that message is prime.
+// There is very little error handling here: if the message is not an integer
+// string, this process will crash (unfortunately, it will also crash silently).
+// While this function is not implemented in any of our examples, it is here to
+// show how it might be done.
 process.on('message', async (message) => {
     var n = parseInt(message);
     n = isPrime(n);

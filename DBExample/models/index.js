@@ -1,7 +1,7 @@
 // Sequelize is a library that interfaces javascript with SQL. It takes in
 // JSON objects, and will (behind the scenes) construct a SQL query to execute.
 const Sequelize = require('sequelize');
-// Connects to the DB. I am using a postgres SQL server.
+// Connects to the DB. We are using a postgres SQL server.
 const db = new Sequelize('postgres://localhost:5432/441Final', {
   logging: false
 });
@@ -12,7 +12,7 @@ db.authenticate().then(() => {
 });
 
 // This rewrites the user table every time. While this would normally be a terrible
-// idea, I did it here to enable cleaner in-class demonstrations.
+// idea, we did it here to enable cleaner in-class demonstrations.
 // These lines create a table with two columns (excluding the default id), and
 // defines some properties about those columns.
 const User = db.define('user', {

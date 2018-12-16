@@ -2,7 +2,7 @@
 
 // 'express' is an extremely convenient node.js server library. It handles a lot
 // of things for us: it allows easy handling of HTTP requests, middleware,
-// caching, authentication, among many other things. I do not implement anywhere
+// caching, authentication, among many other things. We do not implement anywhere
 // close to the full functionality in this example.
 const express = require("express");
 
@@ -23,7 +23,6 @@ const app = express();
 
 // Tells the server to use the development version of Morgan.
 app.use(morgan("dev"));
-// app.use(express.urlencoded({ extended: false }));
 
 // Enables the use of bodyParser.
 app.use(bodyParser.urlencoded({ extended: true })); // for HTML form submits
@@ -45,7 +44,7 @@ app.get('/users', (req, res) => {
   User.findAll()
     // when the DB responds, sends out the response
     .then(dbres => {
-      res.status(200);
+      res.sendStatus(200);
       res.send(dbres);
     })
 })
@@ -60,7 +59,7 @@ app.post('/addUser', (req, res) => {
   })
   // Sends the appropriate HTTP code
   .then(dbres => {
-    res.send(201);
+    res.sendStatus(201);
   })
 })
 
