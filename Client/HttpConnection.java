@@ -146,7 +146,7 @@ public class HttpConnection {
 
 			String[] nums = input.split(" ");
 
-			String urlParameters = "max=" + nums[0] + "&max=" + nums[1];
+			String urlParameters = "min=" + nums[0] + "&max=" + nums[1];
 
 			connection.setDoOutput(true);
 
